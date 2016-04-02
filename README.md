@@ -100,4 +100,16 @@ Classify it using the classification binary available in caffe, example:
 ```
 
 ## Part 5 : Webcam
- 
+The previous classification model can also be run from the webcam:
+```
+cd /home/ubuntu/tx1-lab/webcam
+python webCamClassify.py --mean_file mean.npy  --pretrained_model /home/ubuntu/deploy_files/snapshot_iter_54400.caffemodel --labels_file /home/ubuntu/deploy_files/labels.txt --model_def /home/ubuntu/deploy_files/deploy.prototxt  
+```
+
+## Part 7
+Like in Part 4, connect to the digits server and get the _vehicles_ data set.
+Then you can run the detection script.
+```
+cd ~/tx1-lab1/detection
+python detection.py -i 1443722563_DSC00291.JPG -m <snapshot_file> -d deploy.prototxt -npy mean.npy
+```

@@ -111,13 +111,11 @@ def main(argv):
 		out = classifier.forward()
 		end = (time.time() - start)*1000
 
-		cv2.rectangle(frame,(5,10),(450,70),(0,0,0),-1)
-		cv2.putText(frame,"FF time: %dms/%dFPS" % (end,1000/end),
-			(10,30), cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,255,255),2)
+		#cv2.rectangle(frame,(5,10),(450,70),(0,0,0),-1)
+		#cv2.putText(frame,"FF time: %dms/%dFPS" % (end,1000/end),
+		#	(10,30), cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,255,255),2)
 		print("Main: Done in %.4f s." % (time.time() - start))
 		
-		#print out
-		##scores = out['prob']
 		scores = out['softmax']
 
 		indices = scores.argmax(axis=1)[0,:,:]
