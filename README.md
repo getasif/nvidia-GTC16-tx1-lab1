@@ -10,7 +10,7 @@ sudo apt-get install cmake git aptitude screen g++ libboost-all-dev \
     libgflags-dev libgoogle-glog-dev protobuf-compiler libprotobuf-dev \
     bc libblas-dev libatlas-dev libhdf5-dev libleveldb-dev liblmdb-dev \
     libsnappy-dev libatlas-base-dev python-numpy libgflags-dev \
-    libgoogle-glog-dev
+    libgoogle-glog-dev python-skimage python-protobuf
 ```
 
 ### Caffe
@@ -63,5 +63,41 @@ Timings can be obtained with:
 Compare numbers with the ones presented in the [whitepaper](http://www.nvidia.com/content/tegra/embedded-systems/pdf/jetson_tx1_whitepaper.pdf).
 
 
-## Part XXX:
+## Part 4: Deploy the classification model on the TX1
+
+### Download the model
+Setup a directory to put models in:
+```
+mkdir deploy_files
+```
+
+Download a model with the [provided python script](digits_connect/download-digits-model.py):
+```
+python tx1-lab1/digits_connect/download-digits-model.py -n <your amazon instance>.compute-1.amazonaws.com -p 5000 deploy_files/my_model.tar.gz
+```
+
+Untar
+```
+cd
+tar xzvf my_model.tar.gz
+cd
+```
+
+### Classify an image
+Use the same image you use in Part 2 with Digits. Download it and save it in the _Pictures_ folder.
+
+Classify it using the classification binary available in caffe, example:
+```
+/home/ubuntu/caffe/build/examples/cpp_classification/classification.bin /home/ubuntu/deploy_files/deploy.prototxt  /home/ubuntu/deploy_files/snapshot_iter_54400.caffemodel /home/ubuntu/deploy_files/mean.binaryproto /home/ubuntu/deploy_files/labels.txt /home/ubuntu/Pictures/Bananas.jpg 
+---------- Prediction for /home/ubuntu/Pictures/Bananas.jpg ----------
+1.0000 - "banana"
+0.0000 - "lemon"
+0.0000 - "pineapple"
+0.0000 - "sunglasses"
+0.0000 - "keyboard"
+```
+
+
+
+
 
