@@ -1,5 +1,5 @@
 # GTC2016 Lab
-# L6131 - Deep Learning on GPUs: From Large Scale Training to Embedded DeploymenT
+# L6131 - Deep Learning on GPUs: From Large Scale Training to Embedded Deployment
 
 ## Part 3: Install caffe
 
@@ -60,7 +60,7 @@ Timings can be obtained with:
 ~/caffe/build/tools/caffe_fp16 time --model=~/tx1-lab1/caffe_files/deploy_googlenet_b1.prototxt -gpu 0 -iterations 100
 ```
 
-Compare numbers with the ones presented in the [whitepaper](http://www.nvidia.com/content/tegra/embedded-systems/pdf/jetson_tx1_whitepaper.pdf.
+Compare numbers with the ones presented in the [whitepaper](http://www.nvidia.com/content/tegra/embedded-systems/pdf/jetson_tx1_whitepaper.pdf).
 
 
 ## Part XXX:
