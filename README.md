@@ -10,7 +10,8 @@ sudo apt-get install cmake git aptitude screen g++ libboost-all-dev \
     libgflags-dev libgoogle-glog-dev protobuf-compiler libprotobuf-dev \
     bc libblas-dev libatlas-dev libhdf5-dev libleveldb-dev liblmdb-dev \
     libsnappy-dev libatlas-base-dev python-numpy libgflags-dev \
-    libgoogle-glog-dev python-skimage python-protobuf
+    libgoogle-glog-dev python-skimage python-protobuf python-pandas \
+    libopencv4tegra-python
 ```
 
 ### Caffe
@@ -31,8 +32,8 @@ cd ..
 
 Set up a few environment variables
 ```
-echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/ubuntu/caffe/3rdparty/cnmem/:/home/ubuntu/caffe/distribute/lib' >> ~/.bashrc
-echo 'export PYTHONPATH=${PYTHONPATH}:/home/ubuntu/nvcaffe/distribute/python' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/ubuntu/caffe/3rdparty/cnmem/build:/home/ubuntu/caffe/distribute/lib' >> ~/.bashrc
+echo 'export PYTHONPATH=${PYTHONPATH}:/home/ubuntu/caffe/distribute/python' >> ~/.bashrc
 bash
 ```
 
@@ -98,4 +99,5 @@ Classify it using the classification binary available in caffe, example:
 0.0000 - "keyboard"
 ```
 
-## Part XXX
+## Part 5 : Webcam
+ 
