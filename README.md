@@ -73,7 +73,8 @@ mkdir deploy_files
 
 Download a model with the [provided python script](digits_connect/download-digits-model.py):
 ```
-python tx1-lab1/digits_connect/download-digits-model.py -n <your amazon instance>.compute-1.amazonaws.com -p 5000 deploy_files/my_model.tar.gz
+python tx1-lab1/digits_connect/download-digits-model.py \
+  -n <your amazon instance>.compute-1.amazonaws.com -p 5000 deploy_files/my_model.tar.gz
 ```
 
 Untar
@@ -97,7 +98,4 @@ Classify it using the classification binary available in caffe, example:
 0.0000 - "keyboard"
 ```
 
-
-
-
-
+## Part XXX
